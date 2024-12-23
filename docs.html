@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Markdowner</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    function loadMarkdown() {
+      fetch('README.md') // Your markdown file here
+        .then(response => response.text())
+        .then(markdown => {
+          document.getElementById('Markdown').innerHTML = marked.parse(markdown);
+        });
+    }
+  </script>
+</head>
+<body onload="loadMarkdown()">
+  <div id="content">
+    <div id="Markdown"></div>
+    <div id="PlaceHolder"></div>
+    <div id="footer">
+      <p>Powered by Markdowner (Written By E.Rajati)</p>
+      <a href="https://github.com/erfanrajati/Markdowner">
+        Markdowner on Github
+      </a>
+    </div>
+  </div>
+</body>
+</html>
